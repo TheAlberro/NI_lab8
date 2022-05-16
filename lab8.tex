@@ -1,0 +1,165 @@
+\documentclass[a4paper,10pt]{book}
+\usepackage{polski}
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage{amssymb,latexsym}
+\usepackage[cp1250]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[top=2.5cm,bottom=3cm,left=3.5cm,right=2.5cm]{geometry}
+\usepackage{scalerel}
+\newlength\curht
+\def\defaultdimfrac{.98}
+\def\defaultstartht{\baselineskip}
+\newcommand\diminish[2][\defaultdimfrac]{%
+	\curht=\defaultstartht\relax
+	\def\dimfrac{#1}%
+	\diminishhelpA{#2}%
+}
+\newcommand\diminishhelpA[1]{%
+	\expandafter\diminishhelpB#1\relax%
+}
+\def\diminishhelpB#1#2\relax{%
+	\scaleto{\strut#1}{\curht}%
+	\curht=\dimfrac\curht\relax%
+	\ifx\relax#2\relax\else\diminishhelpA{#2}\fi%
+}
+\linespread{1.3}
+\pagestyle{empty}
+\newtheorem{definition}{Definicja}
+\newtheorem{theorem}{Twierdzenie}
+\newtheorem{remark}{Remark}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem*{acknowledgement}{Acknowledgements}
+\newtheorem{example}{Przyk\l ad}
+\begin{document}.\\
+\large{
+\textsc{Laboratorium 8}\\
+Przepisz poni¿sze treœci zadañ w œrodowisku \LaTeX.
+\\\underline{Przyk³ad 1}\\ Niech $a$ i $b$ bêd¹ dowolnymi liczbami dodatnimi. Korzystaj¹c z indukcji matematyczej wykazaæ, ¿e
+\[(a+b)^n<2^n(a^n+b^n), 
+\]
+dla dowolnego $n\in\mathbb{N}$.
+\\\underline{Przyk³ad 2 - cdots}\\ Korzystaj¹c z zale¿noœci miêdzy œrednimi wykazaæ, ¿e dla dowolnej liczby naturalnej n prawdziwa jest nierównoœæ:
+  $\frac{1}{n+2}+\frac{1}{n+3}+\frac{1}{n+4}+\cdots +\frac{1}{3n+4}\geq 1$\\
+\\\underline{Przyk³ad 3 - left,right}\\
+Wyka¿, ¿e:
+\\ a)  $\left(^{30}_{29}\right)+\left(^{31}_{29}\right)=\left(^{32}_{30}\right)-\left(^{5}_{5}\right)$\\
+b)  \[\sum_{k=0}^{3n}(-1)^k\left(^{3n}_{k}\right)=0.
+\]
+\\\underline{Przyk³ad 4 - mathbb, array}
+Niech $f:\mathbb{R} \rightarrow\mathbb{C}$ bêdzie funkcj¹ dan¹ wzorem:
+\[f(x)=\left\{\begin{array}{ll}
+      -x^2-6x-8 & x\leq -3\\
+      x+2& x>-3
+    \end{array}\right.\]
+ Czy f jest bijekcj¹? W przypadku pozytywnej odpowiedzi wyznaczyæ $f^{-1}$.
+\\\underline{Przyk³ad 5 - lim}
+$\lim_{n\rightarrow \infty}-\frac{\sqrt[3]{5}+\sqrt{2}n^3}{3n^2+1}=-\infty$
+\\\underline{Przyk³ad 6 - sum}
+$\displaystyle\sum_{n=0}^\infty \frac{\sin^2n\pi}{\ln 3n}$
+\\\underline{Przyk³ad 7 - int} $$\int_3^5 (x^2-5x+3)\cdot x\, dx$$
+\\\underline{Przyk³ad 8 - geq}  $$\forall \varepsilon > 0 \exists n_0 \forall n\geq n_0 |a_n-3|<\varepsilon$$.\\\\\\
+\\\underline{Przyk³ad 9 - theorem}
+ \begin{theorem}\label{e}
+ 	Ka¿dy ci¹g $\{x_n\}$ zbie¿ny w przestrzeni metrycznej $(X,d)$ spe³nia warunek Cauchy'ego.
+ \end{theorem}.
+ \\\underline{Przyk³ad 10 - tabular}
+ Utwórz tabelê (tekst w pierwszej kolumnie powinien byæ wyrównany do lewej, natomiast w drugej i trzeciej wyœrodkowany)\\
+ 
+ \begin{tabular}{l|lr|r} 
+ 	a &b &c &d \\ \cline{1-1} \cline{3-4} 
+ 	e &f &g &h 
+ \end{tabular}
+
+pauza
+ 
+ \begin{table}[!h]
+ 	\centering
+ \begin{tabular}{|l|c|c|}
+ 	\hline
+ 	% after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+ 	x & 0 & $\sqrt{3}$\\
+ 	\hline
+ 	f(x) & 3 & 5\\
+ 	\hline
+ \end{tabular}\\
+\caption{Tabela wartoœci funkcji}
+\label{tab:funkcja_f}
+\end{table}
+
+W tabeli \ref{tab:funkcja_f} przedstawiono dwie wartoœci funkcji $f$.
+
+\begin{tabular}{|l|c|c|}
+	1 & 2
+\end{tabular}
+\\\underline{Przyk³ad 11 - array}$$\left\{
+ \begin{array}{cc}
+ x^2-1=y\\
+ 7y-3=2x
+ \end{array}
+ \right.$$
+ \\\underline{Przyk³ad 12 - varepsilon}$$
+ \mathbf{L}_{t}^{\varepsilon}(x) \varphi (u,x,t) =
+ \varepsilon^{-1}
+ [E\{\varphi(u_{n+1}^{\varepsilon },
+ x_{n+1}^{\varepsilon },
+ \tau _{n+1}^{\varepsilon})|
+ u_{n}^{\varepsilon }=u, x_{n}^{\varepsilon }=x,\tau _{n}^{\varepsilon }=t\}]
+ $$  
+ \\\underline{Przyk³ad 13 - phi}
+ $$p_{ij} = \prod_{c=1}^{T}k{\left(\frac{\phi}{(|x_i-x_c|+|y_j-y_c|)^f}+\frac{(1-\phi)B^{g-f}}{(2B-|x_i-x_c|-|y_j-y_c|)^g}\right)}$$ 
+ \\\underline{Przyk³ad 14 - cfrac}
+ \begin{equation}
+ x = a_0 + \cfrac{12356616316}{a_3 
+ 	+ \cfrac{16565}{a_3 
+ 		+ \cfrac{165465465}{a_9 + \cfrac{1131321}{a_7} } } }
+ \end{equation}
+ \\\underline{Przyk³ad 15 - pmatrix}
+ 
+ $A_{m,n} = 
+ \begin{pmatrix}
+ 	a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+ 	a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+ 	\vdots  & \vdots  & \ddots & \vdots  \\
+ 	a_{m,1} & a_{m,2} & \cdots & a_{m,n} 
+ \end{pmatrix}$
+ \\\underline{Przyk³ad 16 - langle, ...}
+ $$( a ), [ b ], \{ c \}, | d |, \| e \|,
+ \langle f \rangle, \lfloor g \rfloor,
+ \lceil h \rceil, \ulcorner i \urcorner$$
+ \\\underline{Przyk³ad 17 - binom.}
+ $$\sum_{i = 1}^{ \left[ \frac{n}{2} \right] }
+ \binom{ x_{i
+ 		, i + 1}^{i^{2}} }
+ { \left[ \frac{i + 3}{3} \right] }
+ \frac{ \sqrt{ \mu(i)^{ \frac{3}{2}} (i^{2} - 1) } }
+ { \sqrt[3]{\rho(i) - 2} + \sqrt[3]{\rho(i) - 1} }
+ $$
+ \\\underline{Przyk³ad 17 - align}
+
+ \begin{align}
+ a_{11}& =b_{11}&
+ a_{12}& =b_{12}\\
+ a_{21}& =b_{21}&
+ a_{22}& =b_{22}+c_{22}
+ \end{align}
+\\\underline{Przyk³ad 18 - dfrac}
+\begin{equation}
+\Re{z} =\frac{n\pi \dfrac{\theta +\psi}{2}}{
+	\left(\dfrac{\theta +\psi}{2}\right)^2 + \left( \dfrac{1}{2}
+	\log \left\lvert\dfrac{B}{A}\right\rvert\right)^2}.
+\end{equation}
+\\\underline{Przyk³ad 19 - underbrace}
+$$\underbrace{a_0+a_1+a_2+\cdots+a_n}_{x}$$
+
+
+%\\\underline{Przyk³ad 20 - dla chêtnych}
+%def\defaultstartht{32pt}
+%\def\pinum{e = 2.71828182845904523536028
+%	747135266249775724709369995957496696762772407663035354759457138217852516642742746}
+ %\diminish{\pinum}
+\end{document} 
